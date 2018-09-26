@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="CRMProject" verbose="1" >
+
+<listeners>
+	<listener class-name="Analyzer.MyTransformer"></listener>
+</listeners>
+
+  <test name="RetryTest" >
+    <classes>
+       <class name="com.crm.qa.testcases.MyRetryTest" />
+    </classes>
+  </test>
+ 
+</suite>
