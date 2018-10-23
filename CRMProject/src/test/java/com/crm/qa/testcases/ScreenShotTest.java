@@ -10,7 +10,7 @@ import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.LoginPage;
 import com.crm.qa.testNGListener.CustomListener;
 
-@Listeners(CustomListener.class) // calling listener class so that on every failed test case oit will take the screenshot.
+@Listeners(CustomListener.class) // calling listener class so that on every failed test case it will take the screenshot.
 public class ScreenShotTest extends TestBase {
 
 	public ScreenShotTest() {

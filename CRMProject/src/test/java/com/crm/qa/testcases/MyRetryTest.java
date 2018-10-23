@@ -30,7 +30,7 @@ public class MyRetryTest extends TestBase {
 		driver.quit();
 	}
 	
-	//@Test(retryAnalyzer= Analyzer.RetryAnalyzer.class)   NOT A GOOD APPROACH Because we need to add thid to every test case.
+	//@Test(retryAnalyzer= Analyzer.RetryAnalyzer.class)   NOT A GOOD APPROACH Because we need to add the id to every test case.//Better to add transformer in testng.xml
 	
 	@Test
 	public void test1(){
@@ -42,6 +42,7 @@ public class MyRetryTest extends TestBase {
 	public void test2(){
 		System.out.println("Test2 failed");
 		Assert.assertEquals(false, true);
+		
 	}
 	
 	

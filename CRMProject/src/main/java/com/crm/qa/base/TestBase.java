@@ -9,10 +9,15 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.crm.qa.util.TestUtil;
 
@@ -52,7 +57,7 @@ public class TestBase {
 		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT,TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(TestUtil.IMPLICIT_WAIT,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT,TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
 		
 	}
@@ -66,5 +71,18 @@ public class TestBase {
 			FileUtils.copyFile(scrFile, new File("E:\\WorkSpace\\CRMProject\\screenshots\\"+testMethodName+"_"+".jpg"));
 			} catch (IOException e) {e.printStackTrace();}
 	}
+	
+	public static void clickOn(WebDriver driver,WebElement locator,int timeout){
+		
+		new WebDriverWait(driver, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
+		
+		//in test-case just call clickOn(driver,driver.findElement(By.id(someid)),20); //will wait for 20 sec to load login button.
+		
+		//OR syntax:-
+		 //WebDriverWait wait = new WebDriverWait(driver, 10);
+
+		// WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id(>someid>)));
+	}
+	
 
 }
