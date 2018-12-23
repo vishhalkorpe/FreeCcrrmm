@@ -17,6 +17,7 @@ public class HomePageTest extends TestBase{
 	HomePage homePage;
 	ContactsPage contactsPage;
 	TestUtil testUtil;
+	
 	public HomePageTest(){
 		
 		super();
