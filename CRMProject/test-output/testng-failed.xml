@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [CRMProject]">
-  <listeners>
-    <listener class-name="Analyzer.MyTransformer"/>
-  </listeners>
-  <test thread-count="5" name="RetryTest(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.testcases.MyRetryTest">
+      <class name="com.crm.qa.testcases.HomePageTest">
         <methods>
+          <include name="verifyUserNameTest"/>
           <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="test1"/>
-          <include name="test2"/>
+          <include name="clickOnContactsLinkTest"/>
+          <include name="verifyHomePageTitleTest"/>
         </methods>
-      </class> <!-- com.crm.qa.testcases.MyRetryTest -->
+      </class> <!-- com.crm.qa.testcases.HomePageTest -->
     </classes>
-  </test> <!-- RetryTest(failed) -->
-</suite> <!-- Failed suite [CRMProject] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

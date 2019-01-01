@@ -6,9 +6,14 @@
 	<listener class-name="Analyzer.MyTransformer"></listener>
 </listeners>
 
+<listeners>
+	<listener class-name="com.crm.qa.testNGListener.ExtentReportNG"></listener>
+</listeners>
+
   <test name="RetryTest" >
     <classes>
-       <class name="com.crm.qa.testcases.MyRetryTest" />
+       <class name="com.crm.qa.testcases.HomePageTest" />
+       <class name="com.crm.qa.testcases.LoginPageTest" />
     </classes>
   </test>
  

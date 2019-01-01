@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.testcases.MyRetryTest">
+      <class name="com.crm.qa.testcases.HomePageTest">
         <methods>
+          <include name="verifyUserNameTest"/>
           <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="test1"/>
-          <include name="test2"/>
+          <include name="clickOnContactsLinkTest"/>
+          <include name="verifyHomePageTitleTest"/>
         </methods>
-      </class> <!-- com.crm.qa.testcases.MyRetryTest -->
+      </class> <!-- com.crm.qa.testcases.HomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
