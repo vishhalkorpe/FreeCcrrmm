@@ -19,13 +19,14 @@ public class TestBrokenLinks {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        
-        String homePage = "http://www.zlti.com";
+    	
+    	String homePage = "http://www.zlti.com";  
         String url = "";
         HttpURLConnection huc = null;
         int respCode = 200;
         
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "D://softwares//browsers//chromedriver_win32//chromedriver.exe");
+		driver = new ChromeDriver();
         
         driver.manage().window().maximize();
         
